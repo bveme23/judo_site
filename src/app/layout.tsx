@@ -49,6 +49,19 @@ export default function RootLayout({
   return (
     <html lang={siteConfig.language}>
       <body className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}>
+        {/* Site-wide subtle background image with low opacity */}
+        <div
+          className="fixed inset-0 -z-10 opacity-15 pointer-events-none"
+          style={{
+            backgroundImage: 'url(/judo_jap.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed',
+          }}
+          aria-hidden="true"
+        />
+
         <I18nProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
