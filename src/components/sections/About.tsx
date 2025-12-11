@@ -15,15 +15,16 @@ export function About() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <h2 className="text-3xl sm:text-4xl font-bold text-textMain mb-6 tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold text-textMain mb-8 tracking-tight" style={{ fontFamily: 'var(--font-serif)' }}>
                 私たちの想い
-                <span className="block mt-2 w-20 h-1 bg-primary rounded-full" />
               </h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-primary via-primary/60 to-transparent rounded-full mb-8"></div>
               <div className="prose prose-lg max-w-none">
-                <p className="text-base sm:text-lg text-textMuted leading-relaxed mb-4">
+                <p className="text-base sm:text-lg text-textMuted leading-relaxed mb-6" style={{ letterSpacing: '0.02em' }}>
                   私たちJ-Roadは、「柔道を通じて世界と日本をもっと近づけたい」という想いから生まれました。単なる観光商品やビジネスとしてのツアーではなく、柔道を愛する人たちが日本の柔道・文化・人との出会いを通して、人生の財産となる体験をしてほしいと考えています。
                 </p>
-                <p className="text-base sm:text-lg text-textMuted leading-relaxed">
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-borderSubtle to-transparent my-6"></div>
+                <p className="text-base sm:text-lg text-textMuted leading-relaxed" style={{ letterSpacing: '0.02em' }}>
                   お金儲けではなく、柔道界の発展と、世界中の柔道家が日本の柔道に触れ続けられる"道"をつくること。それがJ-Roadの使命です。
                 </p>
               </div>
