@@ -51,7 +51,7 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}
         style={{
-          backgroundImage: "url('/judo_jap.jpg')",
+          backgroundImage: "url('/judo_jap.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
