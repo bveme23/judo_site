@@ -59,12 +59,13 @@ export function Hero({ title, subtitle, backgroundImage, ctaPrimary, ctaSecondar
       
       {/* Judo banner overlay with transparency to retain red base */}
       <div
-        className="absolute inset-0 opacity-30 mix-blend-screen pointer-events-none"
+        className="absolute inset-0 opacity-60 mix-blend-overlay pointer-events-none"
         style={{
           backgroundImage: 'url(/judo_banner.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          filter: 'saturate(1.05)',
         }}
         aria-hidden="true"
       />
