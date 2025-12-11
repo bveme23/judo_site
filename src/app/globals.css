@@ -14,7 +14,7 @@
   --borderSubtle: #E5E7EB;
   
   /* Legacy compatibility */
-  --background: #FFFFFF;
+  --background: #E6F3FF;
   --foreground: var(--textMain);
   --card: #FFFFFF;
   --card-foreground: var(--textMain);
