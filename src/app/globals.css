@@ -1,4 +1,97 @@
 @import "tailwindcss";
+/* --- Japanese Aesthetic Palette (Crimson Dojo merged) --- */
+
+:root {
+  /* Japanese palette tokens */
+  --jp-background: 40 20% 96%;
+  --jp-foreground: 0 0% 12%;
+
+  --jp-card: 40 30% 98%;
+  --jp-card-foreground: 0 0% 12%;
+
+  --jp-primary: 0 72% 45%;
+  --jp-primary-foreground: 40 30% 98%;
+
+  --jp-secondary: 0 0% 15%;
+  --jp-secondary-foreground: 40 30% 98%;
+
+  --jp-muted: 40 15% 90%;
+  --jp-muted-foreground: 0 0% 40%;
+
+  --jp-accent: 45 80% 50%;
+  --jp-accent-foreground: 0 0% 12%;
+
+  --jp-border: 40 15% 85%;
+  --jp-ring: 0 72% 45%;
+
+  /* Decorative tokens */
+  --jp-ink: 0 0% 8%;
+  --jp-paper: 40 25% 95%;
+  --jp-rice-paper: 40 30% 98%;
+  --jp-gold: 45 80% 50%;
+  --jp-shadow-ink: 0 0% 0% / 0.08;
+}
+
+/* --- Japanese Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-noto-serif-jp), serif;
+}
+
+/* --- Utility classes --- */
+.text-balance {
+  text-wrap: balance;
+}
+
+.ink-shadow {
+  text-shadow: 2px 2px 0 hsl(var(--jp-shadow-ink));
+}
+
+/* optional japanese paper texture */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: soft-light;
+  opacity: 0.03;
+}
+
+/* Zen Divider */
+.zen-divider {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.zen-divider::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: hsl(var(--jp-primary));
+  border-radius: 999px;
+}
+
+.zen-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6rem;
+  height: 1px;
+  background: hsl(var(--jp-border));
+}
+
+/* Large faint Kanji background decoration */
+.kanji-decoration {
+  color: hsl(var(--jp-primary) / 0.1);
+  font-family: var(--font-noto-serif-jp);
+  font-size: 10rem;
+  position: absolute;
+  z-index: -10;
+  pointer-events: none;
+  user-select: none;
+}
 
 :root {
   /* Red-themed color system */
