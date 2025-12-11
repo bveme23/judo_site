@@ -49,24 +49,24 @@ export default function RootLayout({
   return (
     <html lang={siteConfig.language}>
       <body className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}>
-        {/* Site-wide subtle background image with low opacity */}
-        <div
-          className="fixed inset-0 -z-10 opacity-15 pointer-events-none"
-          style={{
-            backgroundImage: 'url(/judo_jap.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-          }}
-          aria-hidden="true"
-        />
-
         <I18nProvider>
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1 relative pt-0">{children}</main>
-            <Footer />
+          <div className="relative flex min-h-screen flex-col">
+            {/* Site-wide background image placed above plain backgrounds */}
+            <div
+              className="pointer-events-none absolute inset-0 z-0 opacity-25 mix-blend-soft-light"
+              style={{
+                backgroundImage: 'url(/judo_jap.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'fixed',
+              }}
+              aria-hidden="true"
+            />
+
+            <Header className="relative z-10" />
+            <main className="relative z-10 flex-1 pt-0">{children}</main>
+            <Footer className="relative z-10" />
           </div>
         </I18nProvider>
       </body>
