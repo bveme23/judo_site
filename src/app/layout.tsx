@@ -48,9 +48,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={siteConfig.language}>
-      <body className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}>
+      <body
+        className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}
+        style={{
+          backgroundImage: "url('/judo_jap.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <I18nProvider>
-          <div className="relative flex min-h-screen flex-col">
+          <div className="relative flex min-h-screen flex-col bg-black/40">
             <Header />
             <main className="relative z-10 flex-1 pt-0">{children}</main>
             <Footer />
