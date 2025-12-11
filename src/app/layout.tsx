@@ -53,7 +53,7 @@ export default function RootLayout({
           <div className="relative flex min-h-screen flex-col">
             {/* Site-wide background image placed above plain backgrounds */}
             <div
-              className="pointer-events-none absolute inset-0 z-0 opacity-35 mix-blend-overlay"
+              className="pointer-events-none absolute inset-0 z-0 opacity-50 mix-blend-overlay"
               style={{
                 backgroundImage: 'url(/judo_jap.png)',
                 backgroundSize: 'cover',
