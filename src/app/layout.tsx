@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={siteConfig.language}>
-      <body className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased bg-blue-100`}>
+      <body className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}>
         <I18nProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
