@@ -51,19 +51,6 @@ export default function RootLayout({
       <body className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}>
         <I18nProvider>
           <div className="relative flex min-h-screen flex-col">
-            {/* Site-wide background image placed above plain backgrounds */}
-            <div
-              className="pointer-events-none absolute inset-0 z-0 opacity-50 mix-blend-overlay"
-              style={{
-                backgroundImage: 'url(/judo_jap.png)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundAttachment: 'fixed',
-              }}
-              aria-hidden="true"
-            />
-
             <Header />
             <main className="relative z-10 flex-1 pt-0">{children}</main>
             <Footer />
