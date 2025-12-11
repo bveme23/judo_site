@@ -6,22 +6,38 @@ import { CTA } from '@/components/sections/CTA';
 
 export default function Home() {
   return (
-    <main className="pt-0">
-      <Hero
-        title="世界と日本を結び、\n柔道界を変える"
-        subtitle="海外の柔道家・柔道ファンが、日本で『本物の柔道』と『日本文化』を安心して体験できる新しいスポーツツーリズム。"
-        backgroundImage="https://images.unsplash.com/photo-1542818454-dc05decf9db3?auto=format&fit=crop&w=1600&q=80"
-        ctaPrimary={{ text: 'サービスを見る', link: '/services/judo-tourism' }}
-        ctaSecondary={{ text: 'まずは相談する', link: '/contact' }}
+    <main className="pt-0 relative">
+      {/* Full-screen background GIF */}
+      <div 
+        className="fixed inset-0 w-full h-full z-0"
+        style={{
+          backgroundImage: 'url(/sakura.gif)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+        }}
+        aria-hidden="true"
       />
       
-      <WhyJRoad />
-      
-      <About />
-      
-      <Services />
-      
-      <CTA />
+      {/* Content overlay with semi-transparent background for readability */}
+      <div className="relative z-10">
+        <Hero
+          title="世界と日本を結び、\n柔道界を変える"
+          subtitle="海外の柔道家・柔道ファンが、日本で『本物の柔道』と『日本文化』を安心して体験できる新しいスポーツツーリズム。"
+          backgroundImage="https://images.unsplash.com/photo-1542818454-dc05decf9db3?auto=format&fit=crop&w=1600&q=80"
+          ctaPrimary={{ text: 'サービスを見る', link: '/services/judo-tourism' }}
+          ctaSecondary={{ text: 'まずは相談する', link: '/contact' }}
+        />
+        
+        <WhyJRoad />
+        
+        <About />
+        
+        <Services />
+        
+        <CTA />
+      </div>
     </main>
   );
 }
