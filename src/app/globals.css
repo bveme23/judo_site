@@ -14,7 +14,7 @@
   --borderSubtle: #E5E7EB;
   
   /* Legacy compatibility */
-  --background: #FFFFFF
+  --background: #FFFFFF;
   --foreground: var(--textMain);
   --card: #FFFFFF;
   --card-foreground: var(--textMain);
@@ -94,10 +94,31 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), var(--font-noto-sans-jp), system-ui, -apple-system, BlinkMacSystemFont,
     "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Japanese aesthetic enhancements */
+.japanese-text {
+  font-family: var(--font-serif), var(--font-noto-serif-jp);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+
+.japanese-accent-line {
+  position: relative;
+}
+
+.japanese-accent-line::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), transparent);
 }
 
 html {
@@ -262,5 +283,24 @@ html {
   
   .shadow-red-lg {
     box-shadow: var(--shadow-red-lg) !important;
+  }
+  
+  /* Japanese aesthetic utilities */
+  .japanese-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+    opacity: 0.3;
+  }
+  
+  .japanese-card {
+    border: 1px solid rgba(215, 38, 61, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .japanese-card:hover {
+    box-shadow: 0 8px 24px rgba(215, 38, 61, 0.12), 0 2px 4px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
   }
 }
