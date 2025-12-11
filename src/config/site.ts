@@ -14,7 +14,7 @@ export const siteConfig = {
   ],
   theme: {
     colors: {
-      background: "#ffffff",
+      background: "#0000ff",
       primary: "#1c2e4a",
       accent: "#dddddd",
       text: "#333333",
