@@ -48,31 +48,17 @@ export function Hero({ title, subtitle, backgroundImage, ctaPrimary, ctaSecondar
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-delayed" />
       </div>
       
-      {/* Judo banner overlay with transparency to retain red base */}
+      {/* Judo banner sits above the red gradient (no other background images) */}
       <div
-        className="absolute inset-0 opacity-40 mix-blend-soft-light pointer-events-none"
+        className="absolute inset-0 opacity-55 mix-blend-normal pointer-events-none"
         style={{
           backgroundImage: 'url(/judo_banner.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'saturate(1.05)',
         }}
         aria-hidden="true"
       />
-      
-      {/* Background image overlay */}
-      {backgroundImage && (
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-          aria-hidden="true"
-        />
-      )}
       
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
