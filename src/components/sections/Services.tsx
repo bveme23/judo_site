@@ -55,7 +55,7 @@ export function Services() {
               className="group h-full"
             >
               <Link href={service.link} className="block h-full">
-                <div className="card-hover rounded-3xl bg-white overflow-hidden shadow-xl border border-borderSubtle h-full flex flex-col">
+                <div className="card-hover bg-white overflow-hidden border border-border h-full flex flex-col">
                   <div className="p-8 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold text-textMain mb-3 tracking-tight group-hover:text-primary transition-colors">
                       {service.title.includes('(今後展開予定)') ? (
