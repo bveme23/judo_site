@@ -50,17 +50,11 @@ export default function RootLayout({
     <html lang={siteConfig.language}>
       <body
         className={`${notoSans.variable} ${notoSerif.variable} ${inter.variable} antialiased`}
-        style={{
-          backgroundImage: "url('/herojudo.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
       >
         <I18nProvider>
-          <div className="relative flex min-h-screen flex-col bg-black/40">
+          <div className="relative flex min-h-screen flex-col bg-white">
             <Header />
-            <main className="relative z-10 flex-1 pt-0">{children}</main>
+            <main className="relative z-10 flex-1 pt-16">{children}</main>
             <Footer />
           </div>
         </I18nProvider>
