@@ -18,7 +18,7 @@ export function About() {
               <h2 className="text-3xl sm:text-4xl font-bold text-textMain mb-8 tracking-tight" style={{ fontFamily: 'var(--font-serif)' }}>
                 私たちの想い
               </h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-primary via-primary/60 to-transparent rounded-full mb-8"></div>
+              <div className="h-1 w-24 bg-primary mb-8"></div>
               <div className="prose prose-lg max-w-none">
                 <p className="text-base sm:text-lg text-textMuted leading-relaxed mb-6" style={{ letterSpacing: '0.02em' }}>
                   私たちJ-Roadは、「柔道を通じて世界と日本をもっと近づけたい」という想いから生まれました。単なる観光商品やビジネスとしてのツアーではなく、柔道を愛する人たちが日本の柔道・文化・人との出会いを通して、人生の財産となる体験をしてほしいと考えています。
