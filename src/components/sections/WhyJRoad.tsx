@@ -51,9 +51,9 @@ export function WhyJRoad() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card-hover rounded-3xl bg-white p-8 border border-borderSubtle shadow-lg"
+              className="card-hover bg-white p-8 border border-border"
             >
-              <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-2xl bg-primarySoft">
+              <div className="mb-6 flex items-center justify-center w-16 h-16 bg-primarySoft">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-textMain mb-4 tracking-tight">
