@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 interface HeroProps {
   title: string;
@@ -12,157 +11,84 @@ interface HeroProps {
 }
 
 export function Hero({ title, subtitle, backgroundImage, ctaPrimary, ctaSecondary }: HeroProps) {
-  const keyPhrase = '柔道界を変える';
-  // \nを改行として処理し、空行を除外
-  const titleLines = title
-    .replace(/\\n/g, '\n') // エスケープされた\nを実際の改行に変換
-    .split('\n')
-    .map(line => line.trim())
-    .filter(line => line !== '');
-  
-  const titleWithBreaks = titleLines.map((line, index) => {
-    if (line.includes(keyPhrase)) {
-      const titleParts = line.split(keyPhrase);
-      return (
-        <span key={index}>
-          {titleParts[0]}
-          <span className="text-gradient">{keyPhrase}</span>
-          {titleParts[1]}
-          {index < titleLines.length - 1 && <br />}
-        </span>
-      );
-    }
-    return (
-      <span key={index}>
-        {line}
-        {index < titleLines.length - 1 && <br />}
-      </span>
-    );
-  });
-  
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-bgDark via-primaryDark to-bgDark">
-      {/* Animated background orbs - more subtle for Japanese aesthetic */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/15 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-delayed" />
+    <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: 'url(/herojudo.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
+
+      {/* Red Accent Border at top */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
       
-      {/* Judo banner sits above the red gradient (no other background images) */}
-      <div
-        className="absolute inset-0 opacity-55 mix-blend-normal pointer-events-none"
-        style={{
-          backgroundImage: 'url(/judo_banner.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        aria-hidden="true"
-      />
-      
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Text Content */}
-          <div className="text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block mb-8 px-5 py-2 rounded-full bg-primary/25 text-white text-sm font-semibold tracking-widest border border-primary/40 backdrop-blur-sm shadow-lg">
-                J-Road
-              </span>
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-8 leading-[1.2] font-serif"
-              style={{ fontFamily: 'var(--font-serif)' }}
-            >
-              {titleWithBreaks}
-            </motion.h1>
-            
-            {/* Elegant Japanese-style underline accent */}
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="mb-8 h-1 w-24 bg-gradient-to-r from-primary via-accent to-primary rounded-full"
-            />
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl text-gray-200 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans"
-              style={{ letterSpacing: '0.02em' }}
-            >
-              {subtitle}
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
-            >
-              <Link
-                href={ctaPrimary.link}
-                className="btn-primary text-center shadow-red-lg hover:shadow-red-lg/80 transition-all duration-300"
-              >
-                {ctaPrimary.text}
-              </Link>
-              {ctaSecondary && (
-                <Link
-                  href={ctaSecondary.link}
-                  className="btn-secondary text-center backdrop-blur-md transition-all duration-300"
-                >
-                  {ctaSecondary.text}
-                </Link>
-              )}
-            </motion.div>
+      {/* Content */}
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="mb-8">
+          <div className="inline-block">
+            {/* J-Road Logo */}
+            <div className="mb-4 mx-auto">
+              <img src="/logo.png?v=2" alt="J-Road Logo" className="h-32 sm:h-40 w-auto mx-auto drop-shadow-2xl" />
+            </div>
           </div>
-          
-          {/* Right: Logo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative flex items-center justify-center"
+        </div>
+        
+        <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl">
+          {title.split('\\n').map((line, idx) => (
+            <span key={idx}>
+              {line.includes('柔道界を変える') ? (
+                <>
+                  {line.split('柔道界を変える')[0]}
+                  <span className="text-primary">柔道界を変える</span>
+                  {line.split('柔道界を変える')[1]}
+                </>
+              ) : (
+                line
+              )}
+              {idx < title.split('\\n').length - 1 && <br />}
+            </span>
+          ))}
+        </h1>
+        <p className="text-white/90 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href={ctaPrimary.link}
+            className="px-8 py-3 bg-primary text-white hover:bg-red-700 transition-colors"
           >
-            <img
-              src="/logo.png?v=2"
-              alt="J-Road Logo"
-              className="w-full h-auto object-contain"
-            />
-          </motion.div>
+            {ctaPrimary.text}
+          </Link>
+          {ctaSecondary && (
+            <Link
+              href={ctaSecondary.link}
+              className="px-8 py-3 bg-white text-black hover:bg-gray-100 transition-colors"
+            >
+              {ctaSecondary.text}
+            </Link>
+          )}
         </div>
       </div>
-      
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-white/60 text-sm font-medium">スクロール</span>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center"
-          >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-1.5 h-1.5 bg-white/60 rounded-full mt-2"
-            />
-          </motion.div>
-        </div>
-      </motion.div>
+
+      {/* Bottom Decorative Element */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg
+          viewBox="0 0 1200 60"
+          className="w-full h-12"
+          preserveAspectRatio="none"
+        >
+          <path d="M0 60 L0 0 L1200 0 L1200 60 Z" fill="white" />
+        </svg>
+      </div>
     </section>
   );
 }
