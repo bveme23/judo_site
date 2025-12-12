@@ -16,7 +16,7 @@ export function ServiceCards({ services }: ServiceCardsProps) {
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="grid gap-8 md:grid-cols-2">
         {services.map((service) => (
-          <div key={service.slug} className="flex h-full flex-col justify-between rounded-2xl border border-subtle bg-card p-10 shadow-japanese transition hover:shadow-japanese-hover">
+          <div key={service.slug} className="flex h-full flex-col justify-between border border-border bg-card p-10 transition hover:border-primary">
             <div>
               <h2 className="text-xl font-semibold text-primary tracking-wide">
                 {service.title.includes('(今後展開予定)') ? (
