@@ -6,12 +6,7 @@ import Link from 'next/link';
 
 export function CTA() {
   return (
-    <FadeInSection className="py-24 bg-gradient-to-br from-bgDark via-primaryDark to-bgDark text-white relative overflow-hidden">
-      {/* Background orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/15 rounded-full blur-3xl animate-float-delayed" />
-      </div>
+    <FadeInSection className="py-24 bg-black text-white relative">
       
       <section className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
